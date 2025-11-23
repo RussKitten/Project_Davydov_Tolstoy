@@ -1,10 +1,14 @@
 <template>
+  <h1 @click = "() => $router.go(-1)" class="back-card">Назад</h1>
   <section v-if="ev" class="card event-card">
     <h2 class="section-title">{{ ev.title }}</h2>
     <p class="small mono event-meta">
       {{ ev.date }} • {{ loc?.name }} <span v-if="loc">({{ loc.type }})</span>
     </p>
+    <h1>Краткое содержание</h1>
     <p class="event-summary">{{ ev.summary }}</p>
+    <h1>Цитаты</h1>
+    <p class="event-summary" v-for="quote in ev.quotes" :key="quote">"{{ quote  }}"</p>
     <div v-if="ev.participants?.length" class="participants-section">
       <h3>Участники</h3>
       <div class="row participants-row">
@@ -27,11 +31,22 @@ const { loadAll, eventsById, heroesById, locationsById } = useData()
 
 onMounted(loadAll)
 
+// @ts-ignore
 const ev = computed(() => eventsById.value[route.params.id])
 const loc = computed(() => ev.value ? locationsById.value[ev.value.placeId] : null)
 </script>
 
 <style scoped>
+.back-card {
+  cursor: pointer;
+  text-align: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  background: var(--card);
+}
 .card {
   border: 1px solid var(--line);
   padding: 16px;

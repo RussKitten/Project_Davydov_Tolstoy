@@ -11,7 +11,7 @@
         <p class="small mono event-meta">
           {{ ev.date }} • {{ locationsById[ev.placeId]?.name || '—' }}
         </p>
-        <p class="event-summary">{{ ev.summary }}</p>
+        <p class="event-summary">{{ ev.significance }}</p>
         <div class="row participants">
           <span class="tag" v-for="pid in ev.participants" :key="pid">
             {{ heroesById[pid]?.name || pid }}
