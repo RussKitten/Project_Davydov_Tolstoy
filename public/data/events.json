@@ -1,0 +1,172 @@
+[
+  {
+    "id": "soiree-anna-pavlovna",
+    "title": "Вечер у Анны Павловны Шерер",
+    "date": "1805-07-01",
+    "placeId": "st-petersburg",
+    "type": "salon",
+    "participants": [
+      "pierre-bezukhov",
+      "andrei-bolkonsky"
+    ],
+    "summary": "Светская встреча, задающая тон политическим и личным разговорам начала романа."
+  },
+  {
+    "id": "austerlitz-battle",
+    "title": "Битва под Аустерлицем",
+    "date": "1805-12-02",
+    "placeId": "austerlitz",
+    "type": "battle",
+    "participants": [
+      "andrei-bolkonsky",
+      "napoleon-bonaparte"
+    ],
+    "summary": "Решающее сражение между русской и французской армиями, где Андрей Болконский получает тяжёлое ранение."
+  },
+  {
+    "id": "borodino-battle",
+    "title": "Бородинское сражение",
+    "date": "1812-09-07",
+    "placeId": "borodino",
+    "type": "battle",
+    "participants": [
+      "andrei-bolkonsky",
+      "pierre-bezukhov",
+      "napoleon-bonaparte"
+    ],
+    "summary": "Крупнейшее сражение Отечественной войны 1812 года, где русская армия сражалась с Наполеоном."
+  },
+  {
+    "id": "moscow-fire",
+    "title": "Пожар Москвы",
+    "date": "1812-09-14",
+    "placeId": "moscow",
+    "type": "disaster",
+    "participants": [
+      "pierre-bezukhov"
+    ],
+    "summary": "Наполеон вступает в Москву, которая вскоре охвачена пожаром. Пьер спасает семью Ростовых."
+  },
+  {
+    "id": "natasha-and-andrei-engagement",
+    "title": "Помолвка Наташи Ростовой и Андрея Болконского",
+    "date": "1809-01-01",
+    "placeId": "moscow",
+    "type": "personal",
+    "participants": [
+      "natasha-rostova",
+      "andrei-bolkonsky"
+    ],
+    "summary": "Андрей Болконский делает предложение Наташе Ростовой, но помолвка позже будет разорвана."
+  },
+  {
+    "id": "pierre-marriage-to-helene",
+    "title": "Женитьба Пьера Безухова на Элен Курагиной",
+    "date": "1806-01-01",
+    "placeId": "st-petersburg",
+    "type": "personal",
+    "participants": [
+      "pierre-bezukhov",
+      "helene-kuragina"
+    ],
+    "summary": "Пьер женится на Элен Курагиной, но брак оказывается несчастливым и коротким."
+  },
+  {
+    "id": "natasha-and-pierre-meeting",
+    "title": "Встреча Наташи Ростовой и Пьера Безухова",
+    "date": "1812-12-01",
+    "placeId": "moscow",
+    "type": "personal",
+    "participants": [
+      "natasha-rostova",
+      "pierre-bezukhov"
+    ],
+    "summary": "Наташа и Пьер встречаются после войны, и между ними возникают глубокие чувства."
+  },
+  {
+    "id": "duel-with-pierre",
+    "title": "Дуэль Пьера Безухова с Долоховым",
+    "date": "1806-06-01",
+    "placeId": "st-petersburg",
+    "type": "duel",
+    "participants": [
+      "pierre-bezukhov",
+      "fedor-dolokhov"
+    ],
+    "summary": "Пьер вызывает Долохова на дуэль после измены Элен, что приводит к его ранениям и моральному кризису."
+  },
+  {
+    "id": "hunt-in-otradnoye",
+    "title": "Охота в Отрадном",
+    "date": "1806-09-01",
+    "placeId": "otradnoye",
+    "type": "social",
+    "participants": [
+      "natasha-rostova",
+      "nikolai-rostov",
+      "andrei-bolkonsky"
+    ],
+    "summary": "Охота в имении Ростовых, где Андрей Болконский впервые по-настоящему замечает Наташу Ростову."
+  },
+  {
+    "id": "ball-in-st-petersburg",
+    "title": "Бал в Петербурге",
+    "date": "1810-01-01",
+    "placeId": "st-petersburg",
+    "type": "ball",
+    "participants": [
+      "natasha-rostova",
+      "andrei-bolkonsky"
+    ],
+    "summary": "Наташа Ростова и Андрей Болконский встречаются на балу, где между ними возникает взаимное чувство."
+  },
+  {
+    "id": "retreat-from-moscow",
+    "title": "Отступление французской армии из Москвы",
+    "date": "1812-10-19",
+    "placeId": "moscow",
+    "type": "military",
+    "participants": [
+      "pierre-bezukhov",
+      "napoleon-bonaparte"
+    ],
+    "summary": "Начало отступления Наполеона из Москвы, сопровождающееся гибелью его армии."
+  },
+  {
+    "id": "partisan-war",
+    "title": "Партизанская война",
+    "date": "1812-10-01",
+    "placeId": "smolensk",
+    "type": "war",
+    "participants": [
+      "denisov",
+      "petya-rostov"
+    ],
+    "summary": "Русские партизаны ведут борьбу с отступающими французами, проявляя героизм и патриотизм."
+  },
+  {
+    "id": "petersburg-high-society",
+    "title": "Высшее общество Петербурга",
+    "date": "1805-07-01",
+    "placeId": "st-petersburg",
+    "type": "society",
+    "participants": [
+      "pierre-bezukhov",
+      "helene-kuragina",
+      "vasili-kuragin"
+    ],
+    "summary": "Пьер Безухов входит в высшее общество Петербурга, где сталкивается с интригами и фальшью."
+  },
+  {
+    "id": "attempted-elopement-natasha",
+    "title": "Попытка побега Наташи Ростовой с Анатолем Курагиным",
+    "date": "1810-08-01",
+    "placeId": "moscow",
+    "type": "scandal",
+    "participants": [
+      "natasha-rostova",
+      "anatole-kuragin"
+    ],
+    "summary": "Наташа Ростова поддаётся ухаживаниям Анатоля Курагина и пытается сбежать с ним, что приводит к разрыву с Андреем."
+  }
+]

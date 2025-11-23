@@ -1,0 +1,23 @@
+[
+  {
+    "id": "war-and-peace",
+    "title": "Война и мир",
+    "summary": "Противопоставление и взаимопроникновение военной и мирной жизни, испытание личных судеб историей.",
+    "heroes": ["pierre-bezukhov", "andrei-bolkonsky", "natasha-rostova"],
+    "events": ["austerlitz", "battle-borodino", "ball-in-st-petersburg"]
+  },
+  {
+    "id": "freedom-and-necessity",
+    "title": "Свобода и необходимость",
+    "summary": "Пределы личного выбора на фоне исторической необходимости и народной войны.",
+    "heroes": ["pierre-bezukhov", "andrei-bolkonsky"],
+    "events": ["austerlitz", "battle-borodino"]
+  },
+  {
+    "id": "family-and-love",
+    "title": "Семья и любовь",
+    "summary": "Семейные связи, взросление и нравственные испытания.",
+    "heroes": ["natasha-rostova", "pierre-bezukhov"],
+    "events": ["ball-in-st-petersburg", "hunt-in-otradnoye"]
+  }
+]
