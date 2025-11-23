@@ -9,6 +9,7 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "vue": "^3.4.0",
     "vue-router": "^4.3.0"
   },
