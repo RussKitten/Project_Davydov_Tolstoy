@@ -1,4 +1,5 @@
 <template>
+  <h1 @click = "() => $router.go(-1)" class="back-card">Назад</h1>
   <section v-if="th" class="theme-card card">
     <h2 class="section-title">{{ th.title }}</h2>
     <p class="theme-summary">{{ th.summary }}</p>
@@ -48,6 +49,16 @@ const th = computed(() => themesById.value[route.params.id])
 </script>
 
 <style scoped>
+.back-card {
+  cursor: pointer;
+  text-align: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  background: var(--card);
+}
 .theme-card {
   padding: 20px;
   margin: 16px;

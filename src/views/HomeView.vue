@@ -14,10 +14,6 @@
           Читать роман (Викиисточник)
         </a>
       </div>
-      <p class="small">
-        Также доступен английский перевод:
-        <a href="https://www.gutenberg.org/ebooks/2600" target="_blank" rel="noopener">Project Gutenberg</a>.
-      </p>
       <hr class="sep" />
       <ul class="clean features-list">
         <li>• Герои: краткие биографии, связи и эпизоды</li>
