@@ -1,5 +1,10 @@
 <template>
   <section>
+    <div v-if="route.query.fromEvent" class="back-button-container">
+      <button @click="goBackToEvent" class="back-button">
+        Назад к событию
+      </button>
+    </div>
     <h2 class="section-title">Герои</h2>
     <SearchBox v-model="q" placeholder="Поиск по героям…" />
     <hr class="sep" />
@@ -9,7 +14,7 @@
       <article
         v-for="ch in filtered"
         :key="ch.id"
-        :ref="el => el && (cardRefs[ch.id] = el)"
+        :ref="el => { if (el) cardRefs[ch.id] = el }"
         :class="['card', { expanded: expandedIds.has(ch.id) }]"
       >
         <h3>
@@ -50,11 +55,14 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, nextTick, reactive } from 'vue'
+import { computed, ref, onMounted, nextTick, reactive, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useData } from '../composables/useData.js'
 import SearchBox from '../components/SearchBox.vue'
 
 const { loadAll, loading, error, heroes, eventsById } = useData()
+const route = useRoute()
+const router = useRouter()
 const q = ref('')
 const expandedIds = reactive(new Set())
 const cardRefs = reactive({})
@@ -88,6 +96,32 @@ const onImgError = (e) => {
 
 onMounted(loadAll)
 
+const goBackToEvent = () => {
+  if (route.query.fromEvent) {
+    router.push(`/events/${route.query.fromEvent}`)
+  }
+}
+
+// Watch for changes in the route query to expand the appropriate hero
+watch(
+  () => route.query.heroId,
+  (heroId) => {
+    if (heroId && heroes.value) {
+      const heroExists = heroes.value.some(hero => hero.id === heroId)
+      if (heroExists) {
+        expandedIds.add(heroId)
+        nextTick(() => {
+          const el = cardRefs[heroId]
+          if (el && typeof el.scrollIntoView === 'function') {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        })
+      }
+    }
+  },
+  { immediate: true }
+)
+
 const filtered = computed(() => {
   const t = q.value.trim().toLowerCase()
   if (!t) return heroes.value
@@ -101,6 +135,27 @@ const filtered = computed(() => {
 </script>
 
 <style scoped>
+.back-button-container {
+  margin-bottom: 16px;
+}
+
+.back-button {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--peach);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: rgba(187, 148, 87, 0.2);
+  transform: translateY(-1px);
+}
+
 .card {
   border: 1px solid var(--line);
   padding: 16px;
@@ -109,29 +164,24 @@ const filtered = computed(() => {
   background: var(--card);
   margin-bottom: 12px;
 }
-
 .card h3 {
   display: flex;
   align-items: baseline;
   gap: 12px;
   margin: 0 0 8px;
 }
-
 .card h3 a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
-
 .card h3 a:hover {
   text-decoration: underline;
 }
-
 .card.expanded {
   grid-column: 1 / -1;
   scroll-margin-top: 16px;
 }
-
 .expanded-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -139,7 +189,6 @@ const filtered = computed(() => {
   margin-top: 12px;
   align-items: start;
 }
-
 .portrait {
   width: 100%;
   max-width: 150px;
@@ -149,34 +198,28 @@ const filtered = computed(() => {
   border-radius: 8px;
   background: #f1f1f1;
 }
-
 .details .row.wrap {
   flex-wrap: wrap;
   gap: 8px;
 }
-
 .label {
   font-weight: 600;
   margin-right: 8px;
 }
-
 .tag {
   margin-top: 4px;
   cursor: pointer;
 }
-
 .row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 12px;
 }
-
 @media (min-width: 600px) {
   .expanded-content {
     grid-template-columns: 150px 1fr;

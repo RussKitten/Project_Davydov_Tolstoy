@@ -1,5 +1,5 @@
 <template>
-  <h1 @click="() => $router.go(-1)" class="back-card">Назад</h1>
+  <h1 class="back-card"><RouterLink to="/events">Назад</RouterLink></h1>
   <section v-if="ev" class="card event-card">
     <h2 class="section-title">{{ ev.title }}</h2>
     <p class="small mono event-meta">
@@ -16,8 +16,7 @@
           v-for="pid in ev.participants"
           :key="pid"
           class="tag"
-          @click="() => $router.push(`/heroes/`)
-          "
+          @click="navigateToHero(pid)"
         >
           {{ heroesById[pid]?.name || pid }}
         </span>
@@ -29,7 +28,7 @@
 
 <script setup>
 import { computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useData } from '../composables/useData.js'
 
 const props = defineProps({
@@ -40,6 +39,7 @@ const props = defineProps({
 })
 
 const route = useRoute()
+const router = useRouter()
 const { loadAll, eventsById, heroesById, locationsById } = useData()
 
 onMounted(loadAll)
@@ -47,6 +47,16 @@ onMounted(loadAll)
 // @ts-ignore
 const ev = computed(() => eventsById.value[props.id])
 const loc = computed(() => ev.value ? locationsById.value[ev.value.placeId] : null)
+
+const navigateToHero = (heroId) => {
+  router.push({
+    path: '/heroes',
+    query: {
+      heroId,
+      fromEvent: props.id // Pass the current event ID
+    }
+  })
+}
 </script>
 
 <style scoped>
