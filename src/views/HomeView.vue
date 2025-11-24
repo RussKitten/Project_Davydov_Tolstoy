@@ -99,35 +99,68 @@ h1 {
 .buttons-row {
   justify-content: center;
   margin: 14px 0 10px;
+  gap: 12px;
 }
 
-.btn {
+/* Исправленные стили для кнопок */
+a.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border-radius: 12px;
   border: 1px solid transparent;
   background: transparent;
   color: var(--peach);
   cursor: pointer;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  font-family: 'Crimson Text', serif;
+  letter-spacing: 0.5px;
 }
 
-.btn:hover {
-  transform: translateY(-1px);
+a.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.btn-ghost {
-  border-color: transparent;
-  background: rgba(67, 40, 24, 0.35);
+a.btn:hover::before {
+  left: 100%;
 }
 
-.btn-ghost:hover {
-  background: rgba(67, 40, 24, 0.55);
+a.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+a.btn:active {
+  transform: translateY(-1px) scale(1);
+  transition-duration: 0.1s;
+}
+
+a.btn-ghost {
+  border-color: rgba(255, 230, 167, 0.45);
+  background: rgba(255, 230, 167, 0.08);
+}
+
+a.btn-ghost:hover {
+  background: rgba(255, 230, 167, 0.15);
+  border-color: rgba(255, 230, 167, 0.6);
+  box-shadow: 
+    0 12px 30px rgba(187, 148, 87, 0.3),
+    0 0 0 1px rgba(255, 230, 167, 0.3);
 }
 
 .small {
@@ -138,8 +171,27 @@ h1 {
 
 .sep {
   border: none;
-  border-top: 1px dashed var(--line);
-  margin: 14px 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--line) 20%, 
+    var(--gold) 50%, 
+    var(--line) 80%, 
+    transparent);
+  margin: 24px 0;
+  position: relative;
+}
+
+.sep::before {
+  content: '⚜️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card);
+  padding: 0 12px;
+  font-size: 14px;
+  color: var(--gold);
 }
 
 .features-list {
@@ -152,6 +204,16 @@ h1 {
 .features-list li {
   margin: 8px 0;
   font-size: 14px;
+  position: relative;
+  padding-left: 8px;
+}
+
+.features-list li::before {
+  content: '❖';
+  position: absolute;
+  left: -16px;
+  color: var(--gold);
+  opacity: 0.7;
 }
 
 .caption {
@@ -159,6 +221,17 @@ h1 {
   color: var(--muted);
   font-size: 12px;
   text-align: center;
+}
+
+.caption a {
+  color: var(--peach);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.caption a:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 @media (min-width: 600px) {
@@ -215,6 +288,11 @@ h1 {
 
   .hero-img {
     max-width: 350px;
+  }
+  
+  a.btn {
+    padding: 14px 24px;
+    font-size: 16px;
   }
 }
 </style>

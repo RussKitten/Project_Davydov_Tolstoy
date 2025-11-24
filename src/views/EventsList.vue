@@ -75,6 +75,7 @@ function sorted(arr) {
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   background: var(--card);
+  position: relative; /* Добавлено */
 }
 
 .event-title {
@@ -83,6 +84,8 @@ function sorted(arr) {
   font-size: 18px;
   margin: 0 0 8px;
   display: block;
+  position: relative; /* Добавлено */
+  z-index: 2; /* Добавлено */
 }
 
 .event-title:hover {
@@ -92,17 +95,23 @@ function sorted(arr) {
 .event-meta {
   margin: 0 0 12px;
   font-size: 14px;
+  position: relative; /* Добавлено */
+  z-index: 2; /* Добавлено */
 }
 
 .event-summary {
   margin: 0 0 12px;
   line-height: 1.5;
+  position: relative; /* Добавлено */
+  z-index: 2; /* Добавлено */
 }
 
 .participants {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  position: relative; /* Добавлено */
+  z-index: 2; /* Добавлено */
 }
 
 .tag {
@@ -112,6 +121,8 @@ function sorted(arr) {
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
+  position: relative; /* Добавлено */
+  z-index: 2; /* Добавлено */
 }
 
 @media (min-width: 600px) {
