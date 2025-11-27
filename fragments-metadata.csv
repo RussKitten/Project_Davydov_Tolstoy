@@ -1,0 +1,6 @@
+id,title,type,eventId,heroes,source
+1.1.1,"Вечер у Анны Павловны Шерер, июль 1805 г.",event,soiree-anna-pavlovna,"anna-scherer,vasily-kuragin","Том 1, Часть 1, Глава I, стр. 3–7 [attached_file:1]"
+1.1.2,Вход и поведение Пьера Безухова,character,soiree-anna-pavlovna,pierre-bezukhov,"Том 1, Часть 1, Глава III, стр. 11–15 [attached_file:1]"
+1.1.3,Князь Андрей Болконский на вечере,character,soiree-anna-pavlovna,andrei-bolkonsky,"Том 1, Часть 1, Глава III–V, стр. 17–20 [attached_file:1]"
+1.2.6,Дуэль Долохова и Пьера,duel,duel-with-pierre,"fedor-dolokhov,pierre-bezukhov","Том 1, Часть 2, Глава VI, стр. 85 [attached_file:1]"
+3.2.19,Бородино: Андрей Болконский,battle,borodino-battle,andrei-bolkonsky,"Том 3, Часть 2, Глава XIX, стр. 425 [attached_file:1]"
